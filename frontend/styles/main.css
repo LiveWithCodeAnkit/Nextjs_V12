@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@tailwind base;
+@tailwind components;
+.light::-webkit-scrollbar {
+  width: 8px;
+}
+.dark::-webkit-scrollbar {
+  width: 8px;
+}
+.light::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+}
+.light::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 10px;
+}
+.dark::-webkit-scrollbar-track {
+  background-color: #0f172a;
+}
+.dark::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 10px;
+}
+.text-color {
+  @apply dark:text-white
+   dark:hover:text-slate-400 
+   text-blue-500 
+   hover:text-black;
+}
+
+table {
+  @apply w-full;
+}
+thead {
+  @apply hidden lg:table-header-group;
+}
+
+tr {
+  @apply border-b-4 border-gray-100 lg:border-b-0 dark:border-slate-800;
+}
+tr:last-child {
+  @apply border-b-0;
+}
+
+td:not(:first-child) {
+  @apply lg:border-l lg:border-gray-100 lg:dark:border-slate-700;
+}
+
+th {
+  @apply text-left lg:p-3;
+}
+
+td {
+  @apply flex justify-between text-right py-3 px-4 border-b border-gray-100
+    lg:table-cell lg:text-left lg:p-3 lg:border-b-0 dark:border-slate-800;
+}
+
+tbody tr,
+tbody tr:nth-child(odd) {
+  @apply lg:hover:bg-gray-100 lg:dark:hover:bg-slate-700/70;
+}
+
+tbody tr:nth-child(odd) {
+  @apply lg:bg-gray-100/50 lg:dark:bg-slate-800/50;
+}
+
+td:before {
+  content: attr(data-label);
+  @apply font-semibold pr-3 text-left lg:hidden;
+}
+.pagination-btn {
+  @apply py-2 px-3 text-sm rounded border border-white dark:border-slate-900 ring-gray-200 dark:ring-gray-500 dark:bg-slate-900 dark:text-white hover:bg-gray-100 hover:dark:bg-slate-800;
+}
+
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+@layer components {
+  .btn {
+    @apply bg-blue-600 hover:bg-blue-800 font-medium text-white py-2 px-3 rounded;
+  }
+  .label {
+    @apply text-slate-600 font-medium;
+  }
+  .modal-button {
+    @apply py-2 px-5 transition-colors focus:ring duration-150 border rounded border-blue-600 dark:border-blue-500 ring-blue-300 dark:ring-blue-700;
+  }
+  .card-icon {
+    @apply w-[30px] h-[30px] text-sky-400;
+  }
+  .card-icon-container {
+    @apply bg-cyan-100 w-16 h-16 flex justify-center items-center rounded-[10px];
+  }
+}
